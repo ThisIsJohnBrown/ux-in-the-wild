@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class="base fullscreen loaded">
+    <head>
+        
+        
+
+    </head>
+    <body class="reveal-viewport theme-font-league theme-color-grey-blue">
+    <canvas id="canvas"></canvas>
+        <script type="text/javascript">
+        
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        function draw() {
+            context.fillStyle = 'rgba(255, 255, 255, .1)';
+            context.fillRect(0, 0, window.innerWidth, window.innerHeight);
+            context.strokeRect(Math.random() * window.innerWidth,
+                Math.random() * window.innerHeight,
+                Math.random() * window.innerWidth,
+                Math.random() * window.innerHeight);
+            requestAnimationFrame(draw);
+        }
+        draw();
+        
+</script>
+    </body>
+</html>
